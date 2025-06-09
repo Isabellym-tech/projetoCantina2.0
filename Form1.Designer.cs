@@ -33,7 +33,7 @@
             Remover = new Button();
             quantidade = new NumericUpDown();
             lbPedidos = new ListBox();
-            Total = new Label();
+            lbTotal = new Label();
             pagamento = new ComboBox();
             nota = new TextBox();
             finalizarPedido = new Button();
@@ -41,7 +41,7 @@
             textBox1 = new TextBox();
             label1 = new Label();
             label2 = new Label();
-            label3 = new Label();
+            lbTroco = new Label();
             Viagem = new CheckBox();
             ((System.ComponentModel.ISupportInitialize)quantidade).BeginInit();
             SuspendLayout();
@@ -93,14 +93,14 @@
             lbPedidos.Size = new Size(216, 304);
             lbPedidos.TabIndex = 4;
             // 
-            // Total
+            // lbTotal
             // 
-            Total.AutoSize = true;
-            Total.Location = new Point(1087, 137);
-            Total.Name = "Total";
-            Total.Size = new Size(33, 15);
-            Total.TabIndex = 5;
-            Total.Text = "Total";
+            lbTotal.AutoSize = true;
+            lbTotal.Location = new Point(1087, 137);
+            lbTotal.Name = "lbTotal";
+            lbTotal.Size = new Size(33, 15);
+            lbTotal.TabIndex = 5;
+            lbTotal.Text = "Total";
             // 
             // pagamento
             // 
@@ -109,6 +109,7 @@
             pagamento.Name = "pagamento";
             pagamento.Size = new Size(163, 23);
             pagamento.TabIndex = 6;
+            pagamento.SelectedIndexChanged += pagamento_SelectedIndexChanged;
             // 
             // nota
             // 
@@ -160,14 +161,14 @@
             label2.TabIndex = 12;
             label2.Text = "Escolha a forma de pagamento";
             // 
-            // label3
+            // lbTroco
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(1086, 235);
-            label3.Name = "label3";
-            label3.Size = new Size(40, 15);
-            label3.TabIndex = 13;
-            label3.Text = "Troco:";
+            lbTroco.AutoSize = true;
+            lbTroco.Location = new Point(1086, 235);
+            lbTroco.Name = "lbTroco";
+            lbTroco.Size = new Size(40, 15);
+            lbTroco.TabIndex = 13;
+            lbTroco.Text = "Troco:";
             // 
             // Viagem
             // 
@@ -185,7 +186,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1459, 625);
             Controls.Add(Viagem);
-            Controls.Add(label3);
+            Controls.Add(lbTroco);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(textBox1);
@@ -193,7 +194,7 @@
             Controls.Add(finalizarPedido);
             Controls.Add(nota);
             Controls.Add(pagamento);
-            Controls.Add(Total);
+            Controls.Add(lbTotal);
             Controls.Add(lbPedidos);
             Controls.Add(quantidade);
             Controls.Add(Remover);
@@ -213,7 +214,7 @@
         private Button Remover;
         private NumericUpDown quantidade;
         private ListBox lbPedidos;
-        private Label Total;
+        private Label lbTotal;
         private ComboBox pagamento;
         private TextBox nota;
         private Button finalizarPedido;
@@ -221,7 +222,7 @@
         private TextBox textBox1;
         private Label label1;
         private Label label2;
-        private Label label3;
+        private Label lbTroco;
         private CheckBox Viagem;
     }
 }
