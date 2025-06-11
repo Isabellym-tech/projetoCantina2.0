@@ -102,7 +102,7 @@ namespace projetoCantina2._0
         private void pagamento_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-            
+
 
             string opcaoSelecionada = pagamento.SelectedItem.ToString();
             if (opcaoSelecionada == "Dinheiro")
@@ -110,13 +110,50 @@ namespace projetoCantina2._0
                 nota.Visible = true;
                 lbTroco.Visible = true;
 
+
+
             }
 
             else
             {
-                lbTroco.Visible = false; 
+                lbTroco.Visible = false;
                 nota.Visible = false;
             }
+        }
+
+        private void lbTroco_Click(object sender, EventArgs e)
+        {
+
+
+        }
+
+        private void nota_TextChanged(object sender, EventArgs e)
+        {
+            decimal Valornota;
+            decimal troco = 0;
+
+            if (decimal.TryParse(nota.Text, out Valornota))
+            {
+                Valornota = decimal.Parse(nota.Text);
+                Console.Write(nota);
+
+                if (Valornota >= totalPedido)
+                {
+                    troco = Valornota - totalPedido;
+                    lbTroco.Text = $"Troco: R$ {troco:F2}";
+                }
+                else
+                {
+                    lbTroco.Text = "Valor insuficiente para o pagamento.";
+                }
+            }
+
+
+        }
+
+        private void finalizarPedido_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Pedido Finalizado com sucesso!");
         }
     }
 }

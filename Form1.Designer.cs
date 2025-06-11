@@ -113,10 +113,11 @@
             // 
             // nota
             // 
-            nota.Location = new Point(1088, 269);
+            nota.Location = new Point(1087, 248);
             nota.Name = "nota";
             nota.Size = new Size(185, 23);
             nota.TabIndex = 7;
+            nota.TextChanged += nota_TextChanged;
             // 
             // finalizarPedido
             // 
@@ -126,6 +127,7 @@
             finalizarPedido.TabIndex = 8;
             finalizarPedido.Text = "Finalizar Pedido";
             finalizarPedido.UseVisualStyleBackColor = true;
+            finalizarPedido.Click += finalizarPedido_Click;
             // 
             // Balcao
             // 
@@ -164,11 +166,12 @@
             // lbTroco
             // 
             lbTroco.AutoSize = true;
-            lbTroco.Location = new Point(1086, 235);
+            lbTroco.Location = new Point(1087, 279);
             lbTroco.Name = "lbTroco";
             lbTroco.Size = new Size(40, 15);
             lbTroco.TabIndex = 13;
             lbTroco.Text = "Troco:";
+            lbTroco.Click += lbTroco_Click;
             // 
             // Viagem
             // 
